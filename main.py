@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import pipreqs
+
 #********* Data Cleaning **************************
 filename = 'IBM ICE- Consolidated Student Count.xlsx'
 main_data = pd.read_excel(filename)
