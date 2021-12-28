@@ -31,14 +31,11 @@ def students_per_batch(data):
     fig = px.histogram(x=hist.index,y=hist,height=450,width=610,
     title="Students Per Batch",
     color_discrete_sequence=['skyblue'])
+    fig.data[0]['showlegend']=True
     fig.update_layout(
     xaxis_title="",
     yaxis_title="",
-    legend_title="Legend Title",
-    font=dict(
-        family="Courier New, monospace",
-        size=18,
-        color="skyblue" ) )
+    legend_title="Total Students") 
     return fig
 #*****************************************
 Universities = list(main_data.University.unique())
