@@ -58,7 +58,7 @@ if selected_uni != 'All':
     st.write(students_per_batch(data))
     st.write(course_trend(data))
 else:
-    st.header('Overall Analysing')
+    st.header('Overall Analysis')
     total_students = main_data.iloc[:,2:].values.sum()
     st.write('Total Strength : ',total_students)
     st.write(students_per_course(main_data))
