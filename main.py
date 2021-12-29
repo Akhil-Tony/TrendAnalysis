@@ -18,7 +18,7 @@ def students_per_course(data):
     courses = data.iloc[:,2:].sum(axis=0).index
     students = data.iloc[:,2:].sum(axis=0).values
     count_df = pd.DataFrame({'course':courses,'no of students':students})
-    fig = px.pie(count_df,values='no of students',names='course',title='No of Students Per Course')
+    fig = px.pie(count_df,values='no of students',names='course',title='Students Per Course')
     fig.update_traces(textposition = 'inside', textinfo='percent+label')
     return fig
 def students_per_batch(data):
