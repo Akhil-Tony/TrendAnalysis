@@ -30,7 +30,7 @@ def students_per_batch(data):
 
     fig = px.histogram(x=hist.index,y=hist,height=450,width=610,
     title="Students Per Batch",
-    color_discrete_sequence=['skyblue'])
+    color_discrete_sequence=['yellow'])
     fig.data[0]['showlegend']=True
     fig.update_layout(
     xaxis_title="",
