@@ -42,7 +42,7 @@ def course_trend(data):
     g_df['Batch'] = g_df.index
     result = pd.melt(g_df,id_vars='Batch',value_name='count')
     result.columns = ['Batch','Course','Strength']
-    fig = px.line(result,x='Batch',y='Strength',color='Course',text='Course')
+    fig = px.line(result,x='Batch',y='Strength',color='Course',text='Course',title='Course Trends')
     return fig
 #*****************************************
 Universities = list(main_data.University.unique())
@@ -50,6 +50,7 @@ Universities.insert(0,'All')
 selected_uni = st.selectbox(label = "SELECT THE UNIVERSITY" ,options = Universities)
 
 if selected_uni != 'All':
+    st.header('Analysing {} University'.format(selected_uni))
     data = main_data[main_data.University==selected_uni]
     total_students = data.iloc[:,2:].values.sum()
     st.write('Total Strength : ',total_students)
@@ -57,6 +58,7 @@ if selected_uni != 'All':
     st.write(students_per_batch(data))
     st.write(course_trend(data))
 else:
+    st.header('Overall Analysing')
     total_students = main_data.iloc[:,2:].values.sum()
     st.write('Total Strength : ',total_students)
     st.write(students_per_course(main_data))
