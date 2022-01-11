@@ -45,7 +45,7 @@ def course_trend(data,course_list):
     result.columns = ['Batch','Course','Strength']
     check_course = lambda x:any([x == e for e in course_list])
     result = result[result.Course.map(check_course)]
-    fig = px.line(result,x='Batch',y='Strength',color='Course',text='Course',title='Course Trends')
+    fig = px.line(result,x='Batch',y='Strength',color='Course',text='Course') # ,title='Course Trends'
     return fig
 
 def batch_hist(data,year=None):
@@ -68,7 +68,7 @@ def batch_hist(data,year=None):
         name='current running courses',
         orientation='h',
     ))
-    fig.update_layout(title='Course Trends')
+#     fig.update_layout(title='Course Trends')
     return fig
 #******************* Main **********************
 
