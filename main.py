@@ -86,7 +86,7 @@ if selected_uni != 'All':
     st.write('Total Strength : ',total_students)
     st.write(students_per_course(data))
     st.write(students_per_batch(data))
-
+    st.subheader('Course Trend')
     st.write('tick the courses')
     selections = []
     courses = np.array(main_data.columns[2:])
@@ -108,6 +108,7 @@ if selected_uni != 'All':
     st.write(course_trend(data,courses[selections]))
     #**************
     batches = np.array(['All']+list(data.Batch.unique()))
+    st.subheader('Batch Strenght (year wise)')
     year = st.selectbox(label='select a batch',options=batches)
     if year!='All':
         figure = batch_hist(data,year)
@@ -122,7 +123,7 @@ else:
     st.write('Total Strength : ',total_students)
     st.write(students_per_course(data))
     st.write(students_per_batch(data))
-
+    st.subheader('Course Trend')
     st.write('tick the courses')
     selections = []
     courses = np.array(data.columns[2:])
@@ -144,6 +145,7 @@ else:
     st.write(course_trend(data,courses[selections]))
     #****************
     batches = np.array(['All']+list(data.Batch.unique()))
+    st.subheader('Batch Strenght (year wise)')
     year = st.selectbox(label='select a batch',options=batches)
     if year!='All':
         figure = batch_hist(data,year)
@@ -151,7 +153,6 @@ else:
     else:
         figure = batch_hist(data)
         st.write(figure)
-
 
 
 # Universities = list(main_data.University.unique())
