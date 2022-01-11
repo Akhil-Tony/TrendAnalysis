@@ -47,6 +47,7 @@ def course_trend(data,course_list):
     result = result[result.Course.map(check_course)]
     fig = px.line(result,x='Batch',y='Strength',color='Course',text='Course') # ,title='Course Trends'
     fig.update_yaxes(showgrid=False)
+    fig.update_xaxes(showgrid=False)
     return fig
 
 def batch_hist(data,year=None):
