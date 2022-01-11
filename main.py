@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import numpy as np
+# import numpy as np
 import plotly.graph_objects as go
 #********* Data Cleaning **************************
 filename = 'IBM ICE- Consolidated Student Count.xlsx'
